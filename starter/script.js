@@ -71,7 +71,7 @@ k(); //this is independent and does not relate to the this code as it will look 
 
 //regular functions and arrow functions
 
-*/
+
 
 // var firstName = 'Summer';
 
@@ -118,3 +118,64 @@ const addExpr = function (a, b) {
 
 console.log(addExpr(2, 2));
 addExpr(2, 1);
+*/
+
+//primitives vs objects
+
+let age = 20;
+let newAge = age;
+age = 21;
+
+const me = {
+  name: 'Summer',
+  age: 25,
+};
+
+const friend = me;
+friend.age = 26;
+console.log('friend:', friend);
+console.log('me:', me);
+
+// primitive data types
+// Number,string,boolean,undefined,null,symbol,bigint
+// objects
+// object literal, arrays, functions
+
+//primitive types
+let lastName = 'Davis';
+let oldLastName = lastName;
+lastName = 'lopez';
+console.log(lastName, oldLastName);
+
+//reference types
+const summer = {
+  firstName: 'summer',
+  lastName: 'Davis',
+  age: 20,
+};
+
+/*
+marrideSummer and summer before and after marriage the last name is 
+changed to lopez because they point to the same place in memory
+*/
+const marriedSummer = summer;
+marriedSummer.lastName = 'lopez';
+
+console.log('before marriage:', summer);
+console.log('after marriage', marriedSummer);
+
+//copying objects
+
+const summer2 = {
+  firstName: 'summer',
+  lastName: 'Davis',
+  age: 20,
+  family: ['Tony', 'Bob'],
+};
+
+const summerCopy = Object.assign({}, summer2);
+summerCopy.lastName = 'lopez';
+summerCopy.family.push('sean');
+summerCopy.family.push('shaun');
+console.log('Before Marriage', summer2);
+console.log('after marriage', summerCopy);
